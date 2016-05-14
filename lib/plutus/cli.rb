@@ -7,6 +7,7 @@ module Plutus
 
       def run
         Parser.run
+        Workflow.run(**options)
       end
     end
   end
