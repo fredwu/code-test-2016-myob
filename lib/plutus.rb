@@ -1,3 +1,5 @@
 require 'pry'
+require 'plutus/models/employee'
+require 'plutus/builder'
 require 'plutus/cli/parser'
 require 'plutus/cli'
