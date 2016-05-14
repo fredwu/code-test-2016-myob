@@ -10,10 +10,11 @@ RSpec.describe Plutus::Models::Employee do
         last_name:     'Rudd',
         annual_salary: 60_050,
         super_rate:    9,
-        month_period:  'March'
+        month_period:  '01 March - 31 March'
       }
     end
 
+    its(:full_name)                          { is_expected.to eq('David Rudd') }
     its(:gross_income)                       { is_expected.to eq(5_004) }
     its(:income_tax)                         { is_expected.to eq(922) }
     its(:net_income)                         { is_expected.to eq(4_082) }
@@ -33,10 +34,11 @@ RSpec.describe Plutus::Models::Employee do
         last_name:     'Barker',
         annual_salary: 220_000,
         super_rate:    9.5,
-        month_period:  'March'
+        month_period:  '01 March - 31 March'
       }
     end
 
+    its(:full_name)    { is_expected.to eq('Jack Barker') }
     its(:gross_income) { is_expected.to eq(18_333) }
     its(:income_tax)   { is_expected.to eq(6_046) }
     its(:net_income)   { is_expected.to eq(12_287) }
@@ -50,10 +52,11 @@ RSpec.describe Plutus::Models::Employee do
         last_name:     'Hendricks',
         annual_salary: 175_000,
         super_rate:    9.5,
-        month_period:  'March'
+        month_period:  '01 March - 31 March'
       }
     end
 
+    its(:full_name)    { is_expected.to eq('Richard Hendricks') }
     its(:gross_income) { is_expected.to eq(14_583) }
     its(:income_tax)   { is_expected.to eq(4_391) }
     its(:net_income)   { is_expected.to eq(10_192) }
@@ -67,10 +70,11 @@ RSpec.describe Plutus::Models::Employee do
         last_name:     'Walton',
         annual_salary: 18_000,
         super_rate:    9.5,
-        month_period:  'March'
+        month_period:  '01 March - 31 March'
       }
     end
 
+    its(:full_name)    { is_expected.to eq('Carla Walton') }
     its(:gross_income) { is_expected.to eq(1_500) }
     its(:income_tax)   { is_expected.to eq(0) }
     its(:net_income)   { is_expected.to eq(1_500) }

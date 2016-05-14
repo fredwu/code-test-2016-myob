@@ -11,6 +11,10 @@ module Plutus
         @month_period  = month_period
       end
 
+      def full_name
+        "#{first_name} #{last_name}"
+      end
+
       def gross_income
         (annual_salary.to_f / 12).round
       end
