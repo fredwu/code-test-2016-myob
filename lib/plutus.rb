@@ -1,4 +1,5 @@
 require 'pry'
+require 'plutus/config/tax_rates'
 require 'plutus/models/employee'
 require 'plutus/builder'
 require 'plutus/cli/parser'
