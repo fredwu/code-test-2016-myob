@@ -29,6 +29,7 @@ Example usage:
   - For example, the `start date` is always correct (i.e. `01 March - 31 March`)
 - Output file will overwrite the file in specified path if it already exists
 - Tax rates can be changed but are always the same for every employee
+- The use of `Float` or `BigDecimal` in this case has virtually no impact due to the rounding to `Integer`
 
 ## Application Architecture
 

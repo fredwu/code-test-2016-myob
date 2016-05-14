@@ -1,5 +1,8 @@
-require 'pry'
 require 'csv'
+require 'bigdecimal'
+require 'bigdecimal/util'
+require 'pry'
+
 require 'plutus/config/tax_rates'
 require 'plutus/models/employee'
 require 'plutus/transformer'

@@ -16,11 +16,11 @@ module Plutus
       end
 
       def gross_income
-        (annual_salary.to_f / 12).round
+        (annual_salary.to_d / 12).round
       end
 
       def income_tax
-        ((fully_taxable_brackets_amount + partially_taxable_bracket_amount).to_f / 12).round
+        ((fully_taxable_brackets_amount + partially_taxable_bracket_amount).to_d / 12).round
       end
 
       def net_income
@@ -28,7 +28,7 @@ module Plutus
       end
 
       def super
-        (gross_income.to_f * super_rate / 100).round
+        (gross_income.to_d * super_rate / 100).round
       end
 
       private
