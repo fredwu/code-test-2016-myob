@@ -28,10 +28,41 @@ Example usage:
 - Input file will always be correct (in both its format and its data)
   - For example, the `start date` is always correct (i.e. `01 March - 31 March`)
 - Output file will overwrite the file in specified path if it already exists
+- Tax rates can be changed but are always the same for every employee
 
 ## Application Architecture
 
-
+        +----------------------------+
+        |             CLI            |
+        +--------------+-------------+
+                       |
+    +------------------v-----------------+
+    |              Workflow              |
+    +------------------------------------+
+    |   +----------------------------+   |
+    |   |         Transformer        |   | <- Transforms CSV input for consumption.
+    |   +--------------+-------------+   |
+    |                  |                 |
+    |   +--------------v-------------+   |
+    |   |           Builder          |   | <- Builds domain models.
+    |   +----------------------------+   |
+    |   |  +----------------------+  |   |
+    |   |  |        Models        |  |   | <- Domain models.
+    |   |  +----------------------+  |   |
+    |   |  |  +----------------+  |  |   |
+    |   |  |  |    Employee    |  |  |   | <- Employee model contains the calculation logic.
+    |   |  |  +----------------+  |  |   |
+    |   |  +----------------------+  |   |
+    |   +--------------+-------------+   |
+    |                  |                 |
+    |   +--------------v-------------+   |
+    |   |          Producer          |   | <- Produces data for presentation.
+    |   +--------------+-------------+   |
+    |                  |                 |
+    |   +--------------v-------------+   |
+    |   |          Presenter         |   | <- Presents and writes the data to CSV.
+    |   +----------------------------+   |
+    +------------------------------------+
 
 ## Test Suite
 
